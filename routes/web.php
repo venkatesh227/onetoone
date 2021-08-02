@@ -34,3 +34,15 @@ Route::get('/update', function () {
     $address->name = "4523 Update Av,ponnur";
     $address->save();
 });
+
+
+Route::get('/read', function () {
+    $user = User::findOrfail(1);
+    echo $user->address->name;
+});
+
+Route::get('/delete', function () {
+    $user = User::findOrfail(1);
+    $user->address()->delete();
+    return "done";
+});
