@@ -32,6 +32,11 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public function address()
+    {
+        return $this->hasOne('App\Models\Address');
+    }
+
     /**
      * The attributes that should be cast to native types.
      *
